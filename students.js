@@ -26,17 +26,15 @@ const studentsDatabase = {
         email: "sajid@example.com",
         address: "Sylhet, Bangladesh",
         img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200"
-    }
-    ,
-    "1004": {
+    },
+        "1004": {
         password: "pass4",
-        name: "Sajid Ahmed",
-        reg: "REG-2026-8842",
-        mobile: "01900000003",
-        email: "sajid@example.com",
-        address: "Sylhet, Bangladesh",
-        img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200"
+        name: "Anika Rahman",
+        reg: "REG-2026-8841",
+        mobile: "01800000002",
+        email: "anika@example.com",
+        address: "Chittagong, Bangladesh",
+        img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200"
     }
-
     // নিচে আপনি একইভাবে আরও স্টুডেন্ট যোগ করতে পারবেন...
 };
