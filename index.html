@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-page">
+        <div class="header-section">
+            <div class="logo">S</div>
+            <div class="school-name">এবিসি মডেল স্কুল এন্ড কলেজ</div>
+        </div>
+
+        <div class="login-container">
+            <h2>স্টুডেন্ট লগইন</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" placeholder="Enter Student ID" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+            <div class="login-footer-links">
+                <span class="forgot-pass" onclick="openModal('forgotModal')">Forgot Password</span>
+                <a href="https://example.com/registration" target="_blank" class="reg-link">Registration</a>
+            </div>
+        </div>
+
+        <div class="login-page-footer">
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://t.me" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="tel:+880123456789" title="Telephone"><i class="fas fa-phone-alt"></i></a>
+                <a href="mailto:info@school.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://yourwebsite.com" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+            </div>
+            <a href="https://wa.me/880123456789" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Contact us
+            </a>
+        </div>
+    </div>
+
+
+    <div id="dashboard-page">
+        <div class="dashboard-container">
+            <div class="sidebar">
+                <div class="menu-buttons">
+                    <button class="menu-btn active"><i class="fas fa-user-circle"></i> Profile</button>
+                    <a href="https://example.com/routine" class="menu-btn"><i class="fas fa-calendar-alt"></i> Routine</a>
+                    <a href="https://example.com/results" class="menu-btn"><i class="fas fa-poll"></i> Results</a>
+                    <a href="https://example.com/payment" class="menu-btn"><i class="fas fa-credit-card"></i> Payment</a>
+                </div>
+                <button class="logout-btn" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+
+            <div class="main-content">
+                <div class="profile-card">
+                    <button class="edit-profile-btn" onclick="openModal('editModal')"><i class="fas fa-edit"></i> Edit</button>
+                    
+                    <div class="student-photo-container">
+                        <img src="" alt="Student Photo" id="studentImg">
+                    </div>
+
+                    <div class="student-details">
+                        <table>
+                            <tr>
+                                <td><strong>Student's Name:</strong></td>
+                                <td id="dispName"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Student ID:</strong></td>
+                                <td id="dispId"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Registration:</strong></td>
+                                <td id="dispReg"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mobile:</strong></td>
+                                <td id="dispMobile"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Email:</strong></td>
+                                <td id="dispEmail"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Address:</strong></td>
+                                <td id="dispAddress"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="notice-board">
+                    <h3><i class="fas fa-bullhorn" style="color: #e67e22;"></i> নোটিশ বোর্ড</h3>
+                    <ul class="notice-list" id="noticeListContainer">
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="forgotModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('forgotModal')">&times;</span>
+            <p>পাসওয়ার্ডটি পুনরুদ্ধার করতে <strong>OSS Cyber Team</strong> এর এডমিন প্যানেলে যোগাযোগ করুন। নিচের Contact us অপশন থেকে যোগাযোগ করতে পারবেন।</p>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('editModal')">&times;</span>
+            <p>প্রোফাইলের কোন কিছু পরিবর্তন করতে <strong>OSS Cyber Team</strong> এর এডমিন প্যানেলে যোগাযোগ করুন।</p>
+        </div>
+    </div>
+
+
+    <script src="students.js"></script>
+    <script src="notices.js"></script>
+    <script>
+        // পেজ লোড হওয়ার সাথে সাথে নোটিশ বোর্ড রেন্ডার করা
+        window.onload = function() {
+            const container = document.getElementById('noticeListContainer');
+            container.innerHTML = "";
+            noticesData.forEach(notice => {
+                container.innerHTML += `
+                    <li class="notice-item">
+                        <div class="notice-date">${notice.date}</div>
+                        <div class="notice-text">${notice.text}</div>
+                    </li>
+                `;
+            });
+        };
+
+        // লগইন হ্যান্ডলার
+        function handleLogin(event) {
+            event.preventDefault();
+            const studentId = document.getElementById('studentId').value.trim();
+            const password = document.getElementById('password').value;
+
+            // students.js ফাইল থেকে ডাটা চেক করা হচ্ছে
+            if (studentsDatabase[studentId] && studentsDatabase[studentId].password === password) {
+                const student = studentsDatabase[studentId];
+                
+                document.getElementById('dispName').innerText = student.name;
+                document.getElementById('dispId').innerText = studentId;
+                document.getElementById('dispReg').innerText = student.reg;
+                document.getElementById('dispMobile').innerText = student.mobile;
+                document.getElementById('dispEmail').innerText = student.email;
+                document.getElementById('dispAddress').innerText = student.address;
+                document.getElementById('studentImg').src = student.img || "https://via.placeholder.com/150";
+
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('dashboard-page').style.display = 'block';
+            } else {
+                alert("ভুল Student ID অথবা Password!");
+            }
+        }
+
+        function handleLogout() {
+            document.getElementById('loginForm').reset();
+            document.getElementById('dashboard-page').style.display = 'none';
+            document.getElementById('login-page').style.display = 'flex';
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
