@@ -31,6 +31,21 @@
             
 <!-- লগইন ফর্ম বক্স -->
         <div class="login-container">
+            <h2>Student Login</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" placeholder="Enter Student ID" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+<!-- লগইন ফর্ম বক্স -->
+        <div class="login-container">
             <h2>স্টুডেন্ট লগইন</h2>
             <form id="loginForm" onsubmit="handleLogin(event)">
                 <div class="input-group">
@@ -44,23 +59,25 @@
                 <button type="submit" class="login-btn">Login</button>
             </form>
             
-            <!-- লগইন বাটনের নিচে এগুলো আগের মতোই থাকবে -->
+            <!-- লগইন বক্সের নিচে ফরগট পাসওয়ার্ড ও রেজিস্ট্রেশন (আগের মতো) -->
             <div class="login-footer-links">
                 <span class="forgot-pass" onclick="openModal('forgotModal')">Forgot Password</span>
                 <a href="https://example.com/registration" target="_blank" class="reg-link">Registration</a>
             </div>
         </div>
 
-        <!-- পেজের একদম নিচে: বামে সোশ্যাল/ডেভেলপার এবং ডানে কন্টাক্ট বাটন -->
+        <!-- পেজের একদম নিচের ফুটার (বাম এবং ডান কোণায় বিভক্ত) -->
         <div class="login-page-footer">
-            <!-- একদম নিচে বাম পাশে থাকবে এটি -->
+            <!-- ফুটারের বাম পাশ -->
             <div class="footer-left-side">
+                <!-- সোশ্যাল আইকনসমূহ -->
                 <div class="social-icons">
                     <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
                     <a href="https://t.me" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
                     <a href="tel:+880123456789" title="Telephone"><i class="fas fa-phone-alt"></i></a>
                     <a href="mailto:info@school.com" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
+                <!-- ডেভেলপার ক্রেডিট ও ওয়েবসাইট আইকন -->
                 <div class="developer-credit">
                     <span>develop by SC_Sopno</span>
                     <a href="https://your-developer-website.com" target="_blank" class="dev-globe-btn" title="Visit Website">
@@ -68,6 +85,14 @@
                     </a>
                 </div>
             </div>
+
+            <!-- ফুটারের ডান পাশ (Contact us বাটন) -->
+            <div class="footer-right-side">
+                <a href="https://wa.me/880123456789" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Contact us
+                </a>
+            </div>
+        </div>
 
             <!-- একদম নিচে ডান পাশে থাকবে এটি -->
             <div class="footer-right-side">
