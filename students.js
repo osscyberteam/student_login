@@ -34,6 +34,6 @@ const studentsDatabase = {
         mobile: "01900000003",
         email: "sajid@example.com",
         address: "Sylhet, Bangladesh",
-        img: "https://drive.google.com/file/d/17jfXbplrWpz5o2KCjoiXhPU5hZW0E7mB/"
+        img: "https://i.imgur.com/ko0IOMm.png"
     }
 };
