@@ -1,21 +1,21 @@
-/* --- নতুন ফুটার লেআউট স্টাইল (সব বাম পাশে) --- */
+/* --- ফুটার লেআউট স্টাইল (বামে সোশ্যাল/ক্রেডিট এবং ডানে কন্টাক্ট বাটন) --- */
 .login-page-footer {
     display: flex;
-    justify-content: flex-start; /* উপাদানগুলোকে বাম পাশে রাখবে */
-    align-items: flex-start;
-    margin-top: 30px;
+    justify-content: space-between; /* একটি বাম কোনায় এবং অন্যটি ডান কোনায় পাঠাবে */
+    align-items: flex-end; /* একদম নিচের লাইনে সমান রাখবে */
+    margin-top: 40px;
     width: 100%;
 }
 
-.footer-left-container {
+/* ফুটারের বাম পাশের কন্টেইনার */
+.footer-left-side {
     display: flex;
-    flex-direction: column; /* উপর-নিচ করে সাজানোর জন্য */
-    gap: 15px; /* প্রতিটি লাইনের মাঝখানের নিখুঁত দূরত্ব */
-    align-items: flex-start; /* সবকিছু বাম পাশে সমান লাইনে থাকবে */
-    text-align: left;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
 }
 
-/* সোশ্যাল আইকন স্টাইল */
+/* সোশ্যাল আইকন */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -31,19 +31,19 @@
     color: #3498db;
 }
 
-/* ডেভেলপার ক্রেডিট এবং গোলক (Globe) বাটন */
+/* ডেভেলপার ক্রেডিট এবং গ্লোব আইকন */
 .developer-credit {
     font-size: 14px;
     color: #444;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 8px; /* লেখা ও আইকনের মাঝের দূরত্ব */
+    gap: 8px;
 }
 
 .dev-globe-btn {
     color: #3498db;
-    font-size: 18px; /* আইকনের সাইজ */
+    font-size: 18px;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -52,10 +52,15 @@
 
 .dev-globe-btn:hover {
     color: #2c3e50;
-    transform: scale(1.1); /* হোভার করলে সামান্য বড় হবে */
+    transform: scale(1.1);
 }
 
-/* হোয়াটসঅ্যাপ কন্টাক্ট বাটন স্টাইল */
+/* ফুটারের ডান পাশের কন্টেইনার (হোয়াটসঅ্যাপ বাটন) */
+.footer-right-side {
+    display: flex;
+    align-items: center;
+}
+
 .whatsapp-btn {
     display: flex;
     align-items: center;
@@ -74,12 +79,19 @@
     background-color: #20ba5a;
 }
 
-/* মোবাইলের জন্য রেসপনসিভ এডজাস্টমেন্ট */
+/* ===================================================
+   MOBILE RESPONSIVE (মোবাইলের জন্য লেআউট ঠিক রাখা)
+   =================================================== */
 @media (max-width: 768px) {
     .login-page-footer {
-        justify-content: center; /* মোবাইলের ছোট স্ক্রিনে মাঝখানে সুন্দর দেখাবে */
+        flex-direction: column; /* মোবাইলের ছোট স্ক্রিনে উপর-নিচ হবে */
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
     }
-    .footer-left-container {
-        align-items: center; /* মোবাইলে সেন্টারে থাকবে */
+
+    .footer-left-side {
+        align-items: center;
     }
 }
