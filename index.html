@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSS Cyber Team</title>
+    <title>School Management System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,40 +11,12 @@
 
     <div id="login-page">
         <div class="header-section">
-            <div class="logo"><img src="https://i.ibb.co.com/cSZCh9xm/500123880-122106798314878126-5255496280911140373-n.jpg" alt="Logo" class="school-logo-img"></div>
-            <div class="school-name">OSS Cyber Team</div>
+            <div class="logo">
+                <img src="school-logo.png" alt="Logo" class="school-logo-img" onerror="this.style.display='none'; this.parentNode.innerText='LOGO'">
+            </div>
+            <div class="school-name">এবিসি মডেল স্কুল এন্ড কলেজ</div>
         </div>
 
-        <div class="login-container">
-            <h2>Student login</h2>
-            <form id="loginForm" onsubmit="handleLogin(event)">
-                <div class="input-group">
-                    <label for="studentId">Student ID</label>
-                    <input type="text" id="studentId" placeholder="Enter Student ID" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter Password" required>
-                </div>
-                <button type="submit" class="login-btn">Login</button>
-            </form>
-            
-<!-- লগইন ফর্ম বক্স -->
-        <div class="login-container">
-            <h2>Student Login</h2>
-            <form id="loginForm" onsubmit="handleLogin(event)">
-                <div class="input-group">
-                    <label for="studentId">Student ID</label>
-                    <input type="text" id="studentId" placeholder="Enter Student ID" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter Password" required>
-                </div>
-                <button type="submit" class="login-btn">Login</button>
-            </form>
-            
-<!-- লগইন ফর্ম বক্স -->
         <div class="login-container">
             <h2>স্টুডেন্ট লগইন</h2>
             <form id="loginForm" onsubmit="handleLogin(event)">
@@ -59,57 +31,45 @@
                 <button type="submit" class="login-btn">Login</button>
             </form>
             
-            <!-- লগইন বক্সের নিচে ফরগট পাসওয়ার্ড ও রেজিস্ট্রেশন (আগের মতো) -->
             <div class="login-footer-links">
                 <span class="forgot-pass" onclick="openModal('forgotModal')">Forgot Password</span>
                 <a href="https://example.com/registration" target="_blank" class="reg-link">Registration</a>
             </div>
         </div>
 
-        <!-- পেজের একদম নিচের ফুটার (বাম এবং ডান কোণায় বিভক্ত) -->
         <div class="login-page-footer">
-            <!-- ফুটারের বাম পাশ -->
             <div class="footer-left-side">
-                <!-- সোশ্যাল আইকনসমূহ -->
                 <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://t.me" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="tel:+880123456789" title="Telephone"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://facebook.com/yourpage" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://t.me/yourchannel" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="tel:+8801700000000" title="Telephone"><i class="fas fa-phone-alt"></i></a>
                     <a href="mailto:info@school.com" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
-                <!-- ডেভেলপার ক্রেডিট ও ওয়েবসাইট আইকন -->
                 <div class="developer-credit">
                     <span>develop by SC_Sopno</span>
-                    <a href="https://your-developer-website.com" target="_blank" class="dev-globe-btn" title="Visit Website">
+                    <a href="https://your-developer-website.com" target="_blank" class="dev-globe-btn" title="Visit Developer Website">
                         <i class="fas fa-globe"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- ফুটারের ডান পাশ (Contact us বাটন) -->
             <div class="footer-right-side">
-                <a href="https://wa.me/880123456789" target="_blank" class="whatsapp-btn">
+                <a href="https://wa.me/8801700000000" target="_blank" class="whatsapp-btn">
                     <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Contact us
                 </a>
             </div>
         </div>
+    </div>
 
-            <!-- একদম নিচে ডান পাশে থাকবে এটি -->
-            <div class="footer-right-side">
-                <a href="https://wa.me/880123456789" target="_blank" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Contact us
-                </a>
-            </div>
-        </div>
 
     <div id="dashboard-page">
         <div class="dashboard-container">
             <div class="sidebar">
                 <div class="menu-buttons">
                     <button class="menu-btn active"><i class="fas fa-user-circle"></i> Profile</button>
-                    <a href="https://sites.google.com/view/oss-stu-routine/" class="menu-btn"><i class="fas fa-calendar-alt"></i> Routine</a>
-                    <a href="https://sites.google.com/view/oss-stu-results/" class="menu-btn"><i class="fas fa-poll"></i> Results</a>
-                    <a href="https://forms.gle/q5a2sGDAG8GuSoxP9" class="menu-btn"><i class="fas fa-credit-card"></i> Payment</a>
+                    <a href="https://example.com/routine" target="_blank" class="menu-btn"><i class="fas fa-calendar-alt"></i> Routine</a>
+                    <a href="https://example.com/results" target="_blank" class="menu-btn"><i class="fas fa-poll"></i> Results</a>
+                    <a href="https://example.com/payment" target="_blank" class="menu-btn"><i class="fas fa-credit-card"></i> Payment</a>
                 </div>
                 <button class="logout-btn" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </div>
@@ -124,50 +84,28 @@
 
                     <div class="student-details">
                         <table>
-                            <tr>
-                                <td><strong>Student's Name:</strong></td>
-                                <td id="dispName"></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Student ID:</strong></td>
-                                <td id="dispId"></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Registration:</strong></td>
-                                <td id="dispReg"></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Mobile:</strong></td>
-                                <td id="dispMobile"></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Email:</strong></td>
-                                <td id="dispEmail"></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Address:</strong></td>
-                                <td id="dispAddress"></td>
-                            </tr>
+                            <tr><td><strong>Student's Name:</strong></td><td id="dispName"></td></tr>
+                            <tr><td><strong>Student ID:</strong></td><td id="dispId"></td></tr>
+                            <tr><td><strong>Registration:</strong></td><td id="dispReg"></td></tr>
+                            <tr><td><strong>Mobile:</strong></td><td id="dispMobile"></td></tr>
+                            <tr><td><strong>Email:</strong></td><td id="dispEmail"></td></tr>
+                            <tr><td><strong>Address:</strong></td><td id="dispAddress"></td></tr>
                         </table>
                     </div>
                 </div>
 
-<!-- নোটিশ ও ডেভেলপার সেকশন (ড্যাশবোর্ড) -->
                 <div class="dashboard-bottom-grid">
-                    <!-- নোটিশ বোর্ড (বাম পাশে থাকবে) -->
                     <div class="notice-board">
                         <h3><i class="fas fa-bullhorn" style="color: #e67e22;"></i> নোটিশ বোর্ড</h3>
                         <ul class="notice-list" id="noticeListContainer">
-                            <!-- জাভাস্ক্রিপ্ট এর মাধ্যমে নোটিশ লোড হবে -->
-                        </ul>
+                            </ul>
                     </div>
 
-                    <!-- ডেভেলপার ক্রেডিট বক্স (ডান পাশে থাকবে) -->
                     <div class="dashboard-dev-box">
                         <div class="dev-box-content">
                             <i class="fas fa-code-branch dev-icon"></i>
                             <p>develop by SC_Sopno</p>
-                            <a href="https://www.qrcodechimp.com/page/sc-sopno" target="_blank" class="dev-web-btn-large"><i class="fas fa-globe"></i> Visit Website</a>
+                            <a href="https://your-developer-website.com" target="_blank" class="dev-web-btn-large"><i class="fas fa-globe"></i> Visit Website</a>
                         </div>
                     </div>
                 </div>
@@ -194,7 +132,7 @@
     <script src="students.js"></script>
     <script src="notices.js"></script>
     <script>
-        // পেজ লোড হওয়ার সাথে সাথে নোটিশ বোর্ড রেন্ডার করা
+        // পেজ লোড হওয়ার সাথে সাথে নোটিশ লোড করা
         window.onload = function() {
             const container = document.getElementById('noticeListContainer');
             container.innerHTML = "";
@@ -208,16 +146,16 @@
             });
         };
 
-        // লগইন হ্যান্ডলার
+        // একাধিক স্টুডেন্ট লগইন হ্যান্ডলার
         function handleLogin(event) {
             event.preventDefault();
             const studentId = document.getElementById('studentId').value.trim();
             const password = document.getElementById('password').value;
 
-            // students.js ফাইল থেকে ডাটা চেক করা হচ্ছে
             if (studentsDatabase[studentId] && studentsDatabase[studentId].password === password) {
                 const student = studentsDatabase[studentId];
                 
+                // প্রোফাইলে তথ্য সেট করা
                 document.getElementById('dispName').innerText = student.name;
                 document.getElementById('dispId').innerText = studentId;
                 document.getElementById('dispReg').innerText = student.reg;
@@ -226,10 +164,11 @@
                 document.getElementById('dispAddress').innerText = student.address;
                 document.getElementById('studentImg').src = student.img || "https://via.placeholder.com/150";
 
+                // পেজ পরিবর্তন
                 document.getElementById('login-page').style.display = 'none';
                 document.getElementById('dashboard-page').style.display = 'block';
             } else {
-                alert("ভুল Student ID অথবা Password!");
+                alert("ভুল Student ID অথবা Password! উদাহরণ হিসেবে ID: 1001 এবং Pass: pass1 দিয়ে ট্রাই করুন।");
             }
         }
 
@@ -239,18 +178,11 @@
             document.getElementById('login-page').style.display = 'flex';
         }
 
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
+        function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
+        function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
 
         window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
+            if (event.target.classList.contains('modal')) { event.target.style.display = 'none'; }
         }
     </script>
 </body>
