@@ -1,7 +1,7 @@
-/* --- ফুটার লেআউট স্টাইল (বামে সোশ্যাল/ক্রেডিট এবং ডানে কন্টাক্ট বাটন) --- */
+/* --- ফুটার লেআউট (বাম ও ডান পাশে আলাদা) --- */
 .login-page-footer {
     display: flex;
-    justify-content: space-between; /* একটি বাম কোনায় এবং অন্যটি ডান কোনায় পাঠাবে */
+    justify-content: space-between; /* বামের জিনিস বামে, ডানের জিনিস ডানে পাঠাবে */
     align-items: flex-end; /* একদম নিচের লাইনে সমান রাখবে */
     margin-top: 40px;
     width: 100%;
@@ -11,11 +11,11 @@
 .footer-left-side {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px; /* সোশ্যাল আইকন এবং ডেভেলপারের মাঝের দূরত্ব */
     align-items: flex-start;
 }
 
-/* সোশ্যাল আইকন */
+/* সোশ্যাল আইকন স্টাইল */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -31,7 +31,7 @@
     color: #3498db;
 }
 
-/* ডেভেলপার ক্রেডিট এবং গ্লোব আইকন */
+/* ডেভেলপার ক্রেডিট ও গ্লোব আইকন */
 .developer-credit {
     font-size: 14px;
     color: #444;
@@ -55,7 +55,7 @@
     transform: scale(1.1);
 }
 
-/* ফুটারের ডান পাশের কন্টেইনার (হোয়াটসঅ্যাপ বাটন) */
+/* ফুটারের ডান পাশের কন্টেইনার (Contact us) */
 .footer-right-side {
     display: flex;
     align-items: center;
@@ -79,18 +79,14 @@
     background-color: #20ba5a;
 }
 
-/* ===================================================
-   MOBILE RESPONSIVE (মোবাইলের জন্য লেআউট ঠিক রাখা)
-   =================================================== */
+/* মোবাইলের জন্য রেসপনসিভ রেগুলেশন */
 @media (max-width: 768px) {
     .login-page-footer {
-        flex-direction: column; /* মোবাইলের ছোট স্ক্রিনে উপর-নিচ হবে */
+        flex-direction: column; /* মোবাইলে উপর-নিচ হবে কিন্তু সেন্টারে থাকবে */
         align-items: center;
         justify-content: center;
         gap: 20px;
-        text-align: center;
     }
-
     .footer-left-side {
         align-items: center;
     }
