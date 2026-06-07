@@ -29,28 +29,49 @@
                 <button type="submit" class="login-btn">Login</button>
             </form>
             
-<!-- ফুটারের সোশ্যাল আইকন, ক্রেডিট এবং কন্টাক্ট বাটন (সব বাম পাশে) -->
-        <div class="login-page-footer">
-            <div class="footer-left-container">
-                <!-- ১. সোশ্যাল আইকনসমূহ -->
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/profile.php?id=61576343805592" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://t.me/OSS_Cyber_Team" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="tel:+8809638-624886" title="Telephone"><i class="fas fa-phone-alt"></i></a>
-                    <a href="mailto:https://sites.google.com/view/osscyberteam" title="Email"><i class="fas fa-envelope"></i></a>
+<!-- লগইন ফর্ম বক্স -->
+        <div class="login-container">
+            <h2>স্টুডেন্ট লগইন</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" placeholder="Enter Student ID" required>
                 </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+            <!-- লগইন বাটনের নিচে এগুলো আগের মতোই থাকবে -->
+            <div class="login-footer-links">
+                <span class="forgot-pass" onclick="openModal('forgotModal')">Forgot Password</span>
+                <a href="https://example.com/registration" target="_blank" class="reg-link">Registration</a>
+            </div>
+        </div>
 
-                <!-- ২. ডেভেলপার ক্রেডিট ও ওয়েবসাইট আইকন বাটন -->
+        <!-- পেজের একদম নিচে: বামে সোশ্যাল/ডেভেলপার এবং ডানে কন্টাক্ট বাটন -->
+        <div class="login-page-footer">
+            <!-- একদম নিচে বাম পাশে থাকবে এটি -->
+            <div class="footer-left-side">
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://t.me" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="tel:+880123456789" title="Telephone"><i class="fas fa-phone-alt"></i></a>
+                    <a href="mailto:info@school.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
                 <div class="developer-credit">
                     <span>develop by SC_Sopno</span>
-                    <!-- গ্লোব আইকন বাটন, যাতে ক্লিক করলে ওয়েবসাইট ওপেন হবে -->
-                    <a href="https://www.qrcodechimp.com/page/sc-sopno" target="_blank" class="dev-globe-btn" title="Visit Website">
+                    <a href="https://your-developer-website.com" target="_blank" class="dev-globe-btn" title="Visit Website">
                         <i class="fas fa-globe"></i>
                     </a>
                 </div>
+            </div>
 
-                <!-- ৩. হোয়াটসঅ্যাপ কন্টাক্ট বাটন (এখন বাম পাশেই থাকবে) -->
-                <a href="https://wa.me/8801518736263" target="_blank" class="whatsapp-btn">
+            <!-- একদম নিচে ডান পাশে থাকবে এটি -->
+            <div class="footer-right-side">
+                <a href="https://wa.me/880123456789" target="_blank" class="whatsapp-btn">
                     <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Contact us
                 </a>
             </div>
