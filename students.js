@@ -26,5 +26,14 @@ const studentsDatabase = {
         email: "sajid@example.com",
         address: "Sylhet, Bangladesh",
         img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200"
+    },
+    "1004": {
+        password: "pass4",
+        name: "Sajid Ahmed",
+        reg: "REG-2026-8842",
+        mobile: "01900000003",
+        email: "sajid@example.com",
+        address: "Sylhet, Bangladesh",
+        img: "https://drive.google.com/file/d/17jfXbplrWpz5o2KCjoiXhPU5hZW0E7mB/"
     }
 };
