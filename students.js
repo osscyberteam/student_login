@@ -35,5 +35,14 @@ const studentsDatabase = {
         email: "sajid@example.com",
         address: "Sylhet, Bangladesh",
         img: "https://lh3.googleusercontent.com/d/1Ys70CAGvuJVWlFcPpZYw2HGyWI_UDGfH"
+    },
+    "Admin": {
+        password: "Admin0704",
+        name: "Sopno Chakrobortty",
+        reg: "REG-2021-0704",
+        mobile: "01404892693",
+        email: "sc.sopno@gmail.com",
+        address: "Jhenaidah, Bangladesh",
+        img: "https://lh3.googleusercontent.com/d/1HmHHU7RWXmSpyA_DWl4sf258s4k13y4w"
     }
 };
