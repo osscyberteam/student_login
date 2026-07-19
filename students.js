@@ -1,6 +1,6 @@
 // স্টুডেন্টদের ডাটাবেজ উদাহরণ (আইডি, পাসওয়ার্ড এবং প্রোফাইল ডিটেলস)
 const studentsDatabase = {
-    "Admin": {
+    "IT Trainer": {
         password: "Admin0704",
         name: "Sopno Chakrobortty",
         reg: "REG-2021-0704",
