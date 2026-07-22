@@ -196,75 +196,92 @@
 let studentsDatabase = {};
 
 async function loadStudents() {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbx2D30Zm0fPqKFIdRYdQaZyLu2KDHkxgBIJIyndntSbsEYuSftvswyZhCYIuATZHMcqtQ/exec");
-    const data = await response.json();
+    try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbx2D30Zm0fPqKFIdRYdQaZyLu2KDHkxgBIJIyndntSbsEYuSftvswyZhCYIuATZHMcqtQ/exec");
 
-    data.forEach(student => {
-        studentsDatabase[student.id] = {
-            password: student.password,
-            name: student.name,
-            reg: student.reg,
-            mobile: student.mobile,
-            email: student.email,
-            address: student.address,
-            img: student.img
-        };
-    });
+        const data = await response.json();
+
+        studentsDatabase = {};
+
+        data.forEach(student => {
+
+            const id = String(student.id).trim();
+
+            studentsDatabase[id] = {
+                password: String(student.password).trim(),
+                name: student.name || "",
+                reg: student.reg || "",
+                mobile: student.mobile || "",
+                email: student.email || "",
+                address: student.address || "",
+                img: student.img || ""
+            };
+
+        });
+
+        console.log(studentsDatabase);
+
+    } catch (e) {
+        console.error(e);
+        alert("Student Database Load Failed");
+    }
 }
-
-window.addEventListener("load", loadStudents);
 </script>
-    
-    <script src="notices.js"></script>
-    <script>
-        window.onload = function() {
-            const container = document.getElementById('noticeListContainer');
-            container.innerHTML = "";
-            noticesData.forEach(notice => {
-                container.innerHTML += `
-                    <li class="notice-item">
-                        <div class="notice-date">${notice.date}</div>
-                        <div class="notice-text">${notice.text}</div>
-                    </li>
-                `;
-            });
-        };
 
-        function handleLogin(event) {
-            event.preventDefault();
-            const studentId = document.getElementById('studentId').value.trim();
-            const password = document.getElementById('password').value;
+</script>
 
-            if (studentsDatabase[studentId] && studentsDatabase[studentId].password === password) {
-                const student = studentsDatabase[studentId];
-                
-                document.getElementById('dispName').innerText = student.name;
-                document.getElementById('dispId').innerText = studentId;
-                document.getElementById('dispReg').innerText = student.reg;
-                document.getElementById('dispMobile').innerText = student.mobile;
-                document.getElementById('dispEmail').innerText = student.email;
-                document.getElementById('dispAddress').innerText = student.address;
-                document.getElementById('studentImg').src = student.img || "https://via.placeholder.com/150";
+<script src="notices.js"></script>
 
-                document.getElementById('login-page').style.display = 'none';
-                document.getElementById('dashboard-page').style.display = 'block';
-            } else {
-                alert("ভুল Student ID অথবা Password!");
-            }
-        }
+<script>
+window.onload = async function () {
 
-        function handleLogout() {
-            document.getElementById('loginForm').reset();
-            document.getElementById('dashboard-page').style.display = 'none';
-            document.getElementById('login-page').style.display = 'flex';
-        }
+    await loadStudents();
 
-        function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
-        function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
+    const container = document.getElementById('noticeListContainer');
+    container.innerHTML = "";
 
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) { event.target.style.display = 'none'; }
-        }
+    noticesData.forEach(notice => {
+        container.innerHTML += `
+            <li class="notice-item">
+                <div class="notice-date">${notice.date}</div>
+                <div class="notice-text">${notice.text}</div>
+            </li>
+        `;
+    });
+
+};
+function handleLogin(event) {
+    event.preventDefault();
+
+    const studentId = document.getElementById('studentId').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    const student = studentsDatabase[studentId];
+
+    if (student && student.password === password) {
+
+        document.getElementById('dispName').innerText = student.name;
+        document.getElementById('dispId').innerText = studentId;
+        document.getElementById('dispReg').innerText = student.reg;
+        document.getElementById('dispMobile').innerText = student.mobile;
+        document.getElementById('dispEmail').innerText = student.email;
+        document.getElementById('dispAddress').innerText = student.address;
+        document.getElementById('studentImg').src =
+            student.img || "https://via.placeholder.com/150";
+
+        document.getElementById('login-page').style.display = 'none';
+        document.getElementById('dashboard-page').style.display = 'block';
+
+    } else {
+
+        console.log("Student Database:", studentsDatabase);
+        console.log("Entered ID:", studentId);
+        console.log("Entered Password:", password);
+
+        alert("ভুল Student ID অথবা Password!");
+
+    }
+}
     </script>
 </body>
 </html>
