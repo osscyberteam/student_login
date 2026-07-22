@@ -11,7 +11,11 @@ body {
     color: #333;
 }
 
-/* --- ১. লগইন পেজ স্টাইল --- */
+
+/* ===================================================
+   ১. লগইন পেজ স্টাইল
+   =================================================== */
+
 #login-page {
     display: flex;
     flex-direction: column;
@@ -19,7 +23,13 @@ body {
     justify-content: space-between;
     padding: 20px;
     background: linear-gradient(135deg, #e0eafc, #cfdef3);
+
+    /* Student Verification Button-এর জন্য */
+    position: relative;
 }
+
+
+/* --- Header --- */
 
 .header-section {
     display: flex;
@@ -27,7 +37,9 @@ body {
     gap: 15px;
 }
 
-/* গোল স্কুলের লোগো বক্স অপশন */
+
+/* গোল স্কুলের লোগো বক্স */
+
 .logo {
     width: 60px;
     height: 60px;
@@ -55,7 +67,68 @@ body {
     color: #2c3e50;
 }
 
-/* লগইন বক্স (মাঝখানে) */
+
+/* ===================================================
+   STUDENT VERIFICATION BUTTON
+   উপরে ডান পাশে
+   =================================================== */
+
+.student-verification-top {
+    position: absolute;
+
+    top: 32px;
+    right: 30px;
+
+    z-index: 10;
+}
+
+.student-verification-top a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: #2563eb;
+
+    color: #ffffff !important;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, 0.15);
+
+    transition:
+        all 0.3s ease;
+}
+
+.student-verification-top a:hover {
+
+    background: #1d4ed8;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 7px 15px
+        rgba(37, 99, 235, 0.30);
+}
+
+
+/* ===================================================
+   লগইন বক্স
+   =================================================== */
+
 .login-container {
     max-width: 400px;
     width: 100%;
@@ -117,10 +190,23 @@ body {
     font-size: 14px;
 }
 
-.forgot-pass { color: #e74c3c; cursor: pointer; font-weight: 600; }
-.reg-link { color: #3498db; text-decoration: none; font-weight: 600; }
+.forgot-pass {
+    color: #e74c3c;
+    cursor: pointer;
+    font-weight: 600;
+}
 
-/* ফুটার লেআউট (বাম ও ডান কোণায় বিভক্ত) */
+.reg-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* ===================================================
+   ফুটার লেআউট
+   =================================================== */
+
 .login-page-footer {
     display: flex;
     justify-content: space-between;
@@ -136,8 +222,15 @@ body {
     align-items: flex-start;
 }
 
-.social-icons { display: flex; gap: 15px; }
-.social-icons a { font-size: 24px; color: #2c3e50; }
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: #2c3e50;
+}
 
 .developer-credit {
     font-size: 14px;
@@ -167,11 +260,26 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* --- ২. ড্যাশবোর্ড পেজ স্টাইল --- */
-#dashboard-page { display: none; min-height: 100vh; }
-.dashboard-container { display: flex; min-height: 100vh; }
 
-/* সাইডবার মেনু */
+/* ===================================================
+   ২. ড্যাশবোর্ড পেজ স্টাইল
+   =================================================== */
+
+#dashboard-page {
+    display: none;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ===================================================
+   সাইডবার মেনু
+   =================================================== */
+
 .sidebar {
     width: 250px;
     background-color: #2c3e50;
@@ -182,7 +290,12 @@ body {
     padding: 20px 0;
 }
 
-.menu-buttons { display: flex; flex-direction: column; gap: 5px; }
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .menu-btn {
     display: block;
     width: 100%;
@@ -195,7 +308,8 @@ body {
     text-decoration: none;
 }
 
-.menu-btn:hover, .menu-btn.active {
+.menu-btn:hover,
+.menu-btn.active {
     background-color: #34495e;
     border-left: 5px solid #3498db;
     color: white;
@@ -213,26 +327,53 @@ body {
     text-align: center;
 }
 
-.main-content { flex: 1; padding: 30px; background-color: #f4f6f9; }
-
-/* প্রোফাইল কার্ড (এডিটেবল ব্যাকগ্রাউন্ড ইমেজ) */
-/* স্টুডেন্ট প্রোফাইলের ব্যাকগ্রাউন্ড কার্ড - যা শুধু কোড এডিটের সময় বদলানো যাবে */
-.profile-card {
-    /* 👇 নিচের ইউআরএল (url) এর ভেতরে আপনার পছন্দমতো ছবির লিংক বসিয়ে দিন 👇 */
-    background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
-                     url('https://lh3.googleusercontent.com/d/1dIuET-UVd3umkyoWZuQXi1JA1xQV0xFH');
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 12px;
+.main-content {
+    flex: 1;
     padding: 30px;
+    background-color: #f4f6f9;
+}
+
+
+/* ===================================================
+   প্রোফাইল কার্ড
+   =================================================== */
+
+.profile-card {
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.85),
+            rgba(255,255,255,0.85)
+        ),
+
+        url(
+            'https://lh3.googleusercontent.com/d/1dIuET-UVd3umkyoWZuQXi1JA1xQV0xFH'
+        );
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
     position: relative;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.05);
+
     display: flex;
+
     align-items: center;
+
     gap: 30px;
+
     margin-bottom: 30px;
+
     border: 1px solid #e0e0e0;
 }
 
@@ -249,87 +390,495 @@ body {
     font-weight: 600;
 }
 
+
 /* গোল স্টুডেন্ট ফটো */
+
 .student-photo-container {
     width: 130px;
     height: 130px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow:
+        0 4px 8px
+        rgba(0,0,0,0.15);
+
     background-color: #ddd;
+
     flex-shrink: 0;
 }
 
-.student-photo-container img { width: 100%; height: 100%; object-fit: cover; }
-.student-details { width: 100%; overflow-x: auto; }
-.student-details table { border-collapse: collapse; width: 100%; font-size: 16px; }
-.student-details td { padding: 8px 10px; color: #2c3e50; }
-.student-details td strong { color: #333; white-space: nowrap; }
+.student-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-/* নোটিশ ও ড্যাশবোর্ড গ্রিড (পাশাপাশি রাখার জন্য) */
+.student-details {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.student-details table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+}
+
+.student-details td {
+    padding: 8px 10px;
+    color: #2c3e50;
+}
+
+.student-details td strong {
+    color: #333;
+    white-space: nowrap;
+}
+
+
+/* ===================================================
+   নোটিশ ও ড্যাশবোর্ড গ্রিড
+   =================================================== */
+
 .dashboard-bottom-grid {
+
     display: grid;
-    grid-template-columns: 2fr 1fr;
+
+    grid-template-columns:
+        2fr 1fr;
+
     gap: 20px;
+
     align-items: start;
 }
 
-.notice-board, .dashboard-dev-box {
+.notice-board,
+.dashboard-dev-box {
+
     background: white;
+
     border-radius: 10px;
+
     padding: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    border: 1px solid #e0e0e0;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0,0,0,0.05);
+
+    border:
+        1px solid #e0e0e0;
 }
 
-.notice-board h3 { border-bottom: 2px solid #f1c40f; padding-bottom: 10px; margin-bottom: 15px; color: #2c3e50; display: flex; align-items: center; gap: 10px; }
-.notice-list { list-style: none; }
-.notice-item { padding: 12px 0; border-bottom: 1px solid #eee; }
-.notice-item:last-child { border-bottom: none; }
-.notice-date { font-size: 12px; color: #95a5a6; margin-bottom: 4px; }
-.notice-text { font-size: 15px; color: #34495e; }
+.notice-board h3 {
 
-/* ড্যাশবোর্ড ডেভেলপার বক্স */
-.dev-box-content { text-align: center; }
-.dev-icon { font-size: 30px; color: #3498db; margin-bottom: 10px; }
-.dev-box-content p { font-size: 16px; font-weight: bold; color: #2c3e50; margin-bottom: 15px; }
-.dev-web-btn-large { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #3498db; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; width: 100%; }
+    border-bottom:
+        2px solid #f1c40f;
 
-/* --- ৩. পপআপ স্টাইল --- */
-.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
-.modal-content { background-color: white; padding: 25px; border-radius: 8px; max-width: 450px; width: 100%; text-align: center; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-.close-modal { position: absolute; top: 10px; right: 15px; font-size: 22px; cursor: pointer; color: #aaa; }
+    padding-bottom: 10px;
+
+    margin-bottom: 15px;
+
+    color: #2c3e50;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.notice-list {
+    list-style: none;
+}
+
+.notice-item {
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid #eee;
+}
+
+.notice-item:last-child {
+    border-bottom: none;
+}
+
+.notice-date {
+
+    font-size: 12px;
+
+    color: #95a5a6;
+
+    margin-bottom: 4px;
+}
+
+.notice-text {
+
+    font-size: 15px;
+
+    color: #34495e;
+}
+
 
 /* ===================================================
-   MOBILE & TABLET RESPONSIVE STYLES (মিডিয়া কোয়েরি)
+   ড্যাশবোর্ড ডেভেলপার বক্স
    =================================================== */
+
+.dev-box-content {
+    text-align: center;
+}
+
+.dev-icon {
+
+    font-size: 30px;
+
+    color: #3498db;
+
+    margin-bottom: 10px;
+}
+
+.dev-box-content p {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #2c3e50;
+
+    margin-bottom: 15px;
+}
+
+.dev-web-btn-large {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    background-color: #3498db;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    width: 100%;
+}
+
+
+/* ===================================================
+   ৩. পপআপ স্টাইল
+   =================================================== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color:
+        rgba(0,0,0,0.5);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: 15px;
+}
+
+.modal-content {
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    max-width: 450px;
+
+    width: 100%;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.3);
+}
+
+.close-modal {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    color: #aaa;
+}
+
+
+/* ===================================================
+   MOBILE & TABLET RESPONSIVE
+   =================================================== */
+
 @media (max-width: 768px) {
-    /* মোবাইলে ফুটার উপর নিচে হবে */
+
+
+    /* -----------------------------------------------
+       Student Verification Button
+       মোবাইলে উপরে ডান পাশে
+       ----------------------------------------------- */
+
+    .student-verification-top {
+
+        top: 20px;
+
+        right: 15px;
+    }
+
+    .student-verification-top a {
+
+        padding:
+            9px 13px;
+
+        font-size:
+            12px;
+
+        border-radius:
+            7px;
+    }
+
+
+    /* মোবাইলে ফুটার */
+
     .login-page-footer {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
         gap: 20px;
     }
-    .footer-left-side { align-items: center; }
+
+    .footer-left-side {
+        align-items: center;
+    }
+
 
     /* ড্যাশবোর্ড কলাম লেআউট */
-    .dashboard-container { flex-direction: column; }
-    .sidebar { width: 100%; padding: 10px 0; position: sticky; top: 0; z-index: 99; }
-    .menu-buttons { flex-direction: row; overflow-x: auto; padding: 0 10px; scrollbar-width: none; }
-    .menu-buttons::-webkit-scrollbar { display: none; }
-    .menu-btn { padding: 10px 15px; font-size: 14px; white-space: nowrap; text-align: center; }
-    .menu-btn:hover, .menu-btn.active { border-left: none; border-bottom: 3px solid #3498db; background-color: #34495e; }
-    .logout-btn { margin: 8px 10px 0 10px; padding: 8px; font-size: 14px; }
 
-    .main-content { padding: 15px; }
-    .profile-card { flex-direction: column; align-items: center; text-align: center; padding: 50px 20px 20px 20px; }
-    .edit-profile-btn { top: 15px; right: 15px; }
-    .student-photo-container { width: 110px; height: 110px; }
-    .student-details table { font-size: 14px; }
-    .student-details td { padding: 6px 4px; text-align: left; }
+    .dashboard-container {
+        flex-direction: column;
+    }
 
-    /* মোবাইলে নোটিশের নিচে ডেভেলপার বক্স যাবে */
-    .dashboard-bottom-grid { grid-template-columns: 1fr; }
+    .sidebar {
+
+        width: 100%;
+
+        padding:
+            10px 0;
+
+        position:
+            sticky;
+
+        top: 0;
+
+        z-index: 99;
+    }
+
+    .menu-buttons {
+
+        flex-direction:
+            row;
+
+        overflow-x:
+            auto;
+
+        padding:
+            0 10px;
+
+        scrollbar-width:
+            none;
+    }
+
+    .menu-buttons::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-btn {
+
+        padding:
+            10px 15px;
+
+        font-size:
+            14px;
+
+        white-space:
+            nowrap;
+
+        text-align:
+            center;
+    }
+
+    .menu-btn:hover,
+    .menu-btn.active {
+
+        border-left:
+            none;
+
+        border-bottom:
+            3px solid #3498db;
+
+        background-color:
+            #34495e;
+    }
+
+    .logout-btn {
+
+        margin:
+            8px 10px 0 10px;
+
+        padding:
+            8px;
+
+        font-size:
+            14px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .profile-card {
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        text-align:
+            center;
+
+        padding:
+            50px 20px 20px 20px;
+    }
+
+    .edit-profile-btn {
+
+        top:
+            15px;
+
+        right:
+            15px;
+    }
+
+    .student-photo-container {
+
+        width:
+            110px;
+
+        height:
+            110px;
+    }
+
+    .student-details table {
+        font-size: 14px;
+    }
+
+    .student-details td {
+
+        padding:
+            6px 4px;
+
+        text-align:
+            left;
+    }
+
+
+    /* মোবাইলে নোটিশের নিচে ডেভেলপার বক্স */
+
+    .dashboard-bottom-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* ===================================================
+   ছোট মোবাইল
+   =================================================== */
+
+@media (max-width: 480px) {
+
+    .student-verification-top {
+
+        top:
+            15px;
+
+        right:
+            10px;
+    }
+
+    .student-verification-top a {
+
+        padding:
+            8px 10px;
+
+        font-size:
+            11px;
+    }
+
+    .school-name {
+
+        font-size:
+            18px;
+    }
+
+    .logo {
+
+        width:
+            50px;
+
+        height:
+            50px;
+    }
+
+    .login-container {
+
+        padding:
+            25px 20px;
+    }
+
 }
