@@ -192,7 +192,29 @@
     </div>
 
 
-    <script src="students.js"></script>
+<script>
+let studentsDatabase = {};
+
+async function loadStudents() {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbx2D30Zm0fPqKFIdRYdQaZyLu2KDHkxgBIJIyndntSbsEYuSftvswyZhCYIuATZHMcqtQ/exec");
+    const data = await response.json();
+
+    data.forEach(student => {
+        studentsDatabase[student.id] = {
+            password: student.password,
+            name: student.name,
+            reg: student.reg,
+            mobile: student.mobile,
+            email: student.email,
+            address: student.address,
+            img: student.img
+        };
+    });
+}
+
+window.addEventListener("load", loadStudents);
+</script>
+    
     <script src="notices.js"></script>
     <script>
         window.onload = function() {
